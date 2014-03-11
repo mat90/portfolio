@@ -27,7 +27,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
-    'portfolio.home',
+    'apps.home',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +55,7 @@ DATABASES = {
 }
 
 TEMPLATE_DIRS = (
-    '%s/templates/' % BASE_DIR,
+    '/home/mat90/portfolio/templates/',
 )
 
 # Internationalization
