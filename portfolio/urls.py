@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from home.views import Home
+from portfolio.home.views import Home
 from django.contrib import admin
 admin.autodiscover()
 
