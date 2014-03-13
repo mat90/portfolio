@@ -23,6 +23,7 @@ class Home(View):
 
 
 class Works(View):
+    template_name = "works.html"
     def get(self, request):
         works = Content.objects.filter(is_main=False)
         for w in works:
@@ -30,18 +31,19 @@ class Works(View):
 
         return render(
             request,
-            "works.html",{
+            self.template_name,{
             'works': works,
         })
 
 class Work(View):
+    template_name = "work.html"
 
     def get(self, request, id):
         work = get_object_or_404(Content, id=int(id))
         work.images = Images.objects.filter(content=work)
         return render(
             request,
-            "work.html",{
+            self.template_name,{
             'work': work,
         })
 
@@ -49,3 +51,13 @@ class Work(View):
 class Contact(View):
     def post(self, request):
         return HttpResponseRedirect(reverse('home'))
+
+
+class About(View):
+    template_name = "about.html"
+
+    def get(self, request):
+        return render(
+            request,
+            self.template_name, {
+        })
