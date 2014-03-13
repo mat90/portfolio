@@ -1,176 +1,173 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <!-- http://team.fourdesire.com/playgrounds/texteffects -->
-    <!-- http://www.pracuj.pl/praca/programista-python-lublin,oferta,3314536 -->
-    <!-- https://github.com/claystreet/bootstrap-tipover -->
+    <head>
+        <!-- http://team.fourdesire.com/playgrounds/texteffects -->
+        <!-- http://www.pracuj.pl/praca/programista-python-lublin,oferta,3314536 -->
+        <!-- https://github.com/claystreet/bootstrap-tipover -->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <script src="{{ MEDIA_URL }}js/text-effect.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css">
+        <script src="{{ MEDIA_URL }}js/text-effect.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css">
 
-    <script>
-      $(document).ready(
-        function(){
-          $('#home').mouseover(function(){
-            $('#ico_home').removeClass("glyphicon-plus");
-            $('#ico_home').addClass("glyphicon-remove blue")
-            $('#home').text("Home")
-            $('#home').textEffect({});
-            $('#home').mouseout(function(){
-              $('#ico_home').attr("class","glyphicon glyphicon-plus");
+        <script>
+          $(document).ready(
+            function(){
+              $('#home').mouseover(function(){
+                $('#ico_home').removeClass("glyphicon-plus");
+                $('#ico_home').addClass("glyphicon-remove blue")
+                $('#home').text("Home")
+                $('#home').textEffect({});
+                $('#home').mouseout(function(){
+                  $('#ico_home').attr("class","glyphicon glyphicon-plus");
+                });
+              });
+              $('#works').mouseover(function(){
+                $('#ico_works').removeClass("glyphicon-plus");
+                $('#ico_works').addClass("glyphicon-remove blue")
+                $('#works').text("Moje prace");
+                $('#works').textEffect({});
+                $('#works').mouseout(function(){
+                  $('#ico_works').attr("class","glyphicon glyphicon-plus");
+                  $('#works').text("Moje prace");
+                });
+              });
+              $('#about').mouseover(function(){
+                $('#ico_about').removeClass("glyphicon-plus");
+                $('#ico_about').addClass("glyphicon-remove blue")
+                $('#about').text("O Mnie");
+                $('#about').textEffect({});
+                $('#about').mouseout(function(){
+                  $('#ico_about').attr("class","glyphicon glyphicon-plus");
+                });
+              });
+
+              $('#contact').mouseover(function(){
+                $('#ico_contact').removeClass("glyphicon-plus");
+                $('#ico_contact').addClass("glyphicon-remove blue")
+                $('#contact').text("Kontakt");
+                $('#contact').textEffect({});
+                $('#contact').mouseout(function(){
+                  $('#ico_contact').attr("class","glyphicon glyphicon-plus");
+                });
+              });
+
             });
-          });
-          $('#works').mouseover(function(){
-            $('#ico_works').removeClass("glyphicon-plus");
-            $('#ico_works').addClass("glyphicon-remove blue")
-            $('#works').text("Moje prace");
-            $('#works').textEffect({});
-            $('#works').mouseout(function(){
-              $('#ico_works').attr("class","glyphicon glyphicon-plus");
-              $('#works').text("Moje prace");
-            });
-          });
-          $('#about').mouseover(function(){
-            $('#ico_about').removeClass("glyphicon-plus");
-            $('#ico_about').addClass("glyphicon-remove blue")
-            $('#about').text("O Mnie");
-            $('#about').textEffect({});
-            $('#about').mouseout(function(){
-              $('#ico_about').attr("class","glyphicon glyphicon-plus");
-            });
-          });
+        </script>
 
-          $('#contact').mouseover(function(){
-            $('#ico_contact').removeClass("glyphicon-plus");
-            $('#ico_contact').addClass("glyphicon-remove blue")
-            $('#contact').text("Kontakt");
-            $('#contact').textEffect({});
-            $('#contact').mouseout(function(){
-              $('#ico_contact').attr("class","glyphicon glyphicon-plus");
-            });
-          });
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
 
-        });
-    </script>
+            <!--MENU-->
+            <div class="col-sm-3 ">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img class="logo" src="{{ MEDIA_URL }}images/logo.png">
+                    </div>
+                    <div class="col-sm-12">
+                        <ul class="nav">
+                            <li>
+                                <div class="col-sm-2">
+                                    <span id="ico_home" class="glyphicon glyphicon-plus"></span>
+                                </div>
+                                <div class="col-sm-10">
+                                    <a href="{% url 'home' %}">
+                                        <div id="home" class="menu">Home</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-sm-2">
+                                    <span id="ico_works" class="glyphicon glyphicon-plus"></span>
+                                </div>
+                                <div class="col-sm-10">
+                                    <a href="{% url 'works' %}">
+                                        <div id="works" class="menu">Moje prace</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-sm-2">
+                                    <span id="ico_about" class="glyphicon glyphicon-plus"></span>
+                                </div>
+                                <div class="col-sm-10">
+                                    <a href="">
+                                        <div id="about" class="menu">O Mnie</div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
 
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <div class="container">
+                    </div>
 
-        <!--MENU-->
-        <div class="col-sm-3 ">
-            <div class="row">
-                <div class="col-sm-12">LOGO</div>
-
-                <div class="col-sm-12">
-                    <ul class="nav">
-                        <li>
-                            <div class="col-sm-2">
-                                <span id="ico_home" class="glyphicon glyphicon-plus"></span>
-                            </div>
-                            <div class="col-sm-10">
-                                <a href="">
-                                    <div id="home" class="menu">Home</div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <span id="ico_contact" class="glyphicon glyphicon-plus"></span>
+                        </div>
+                        <div class="col-sm-10">
+                                <!-- Button trigger modal -->
+                                <a href="javascript:void(0);">
+                                    <div id="contact" data-toggle="modal" data-target="#myModal" class="menu">Kontakt</div>
                                 </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-sm-2">
-                                <span id="ico_works" class="glyphicon glyphicon-plus"></span>
-                            </div>
-                            <div class="col-sm-10">
-                                <a href="">
-                                    <div id="works" class="menu">Moje prace</div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-sm-2">
-                                <span id="ico_about" class="glyphicon glyphicon-plus"></span>
-                            </div>
-                            <div class="col-sm-10">
-                                <a href="">
-                                    <div id="about" class="menu">O Mnie</div>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
 
                 </div>
+            </div>
 
-                <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <span id="ico_contact" class="glyphicon glyphicon-plus"></span>
-                    </div>
-                    <div class="col-sm-10">
-                            <!-- Button trigger modal -->
-                            <a href="javascript:void(0);">
-                                <div id="contact" data-toggle="modal" data-target="#myModal" class="menu">Kontakt</div>
-                            </a>
-                    </div>
-                </div>
+            <!--TREŚĆ-->
+            <div class="col-sm-8 col-sm-offset-1">
+
+                {% block content %}
+                    {% if content %}
+                        {% for c in content %}
+                            <h3 class="blog-post-title">{{ c.title }}</h3>
+                            <p class="blog-post-meta">{{ c.meta }}</p>
+                            <p>
+                                <blockquote class="blog-post">
+                                    {{ c.text }}
+                                </blockquote>
+                            </p>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}
 
             </div>
         </div>
 
-        <!--TREŚĆ-->
-        <div class="col-sm-8 col-sm-offset-1">
-
-            {% block content %}
-                {% if content %}
-                    {% for c in content %}
-                        <h3 class="blog-post-title">{{ c.title }}</h3>
-                        <p class="blog-post-meta">{{ c.meta }}</p>
-                        <p>
-                            <blockquote class="blog-post">
-                                {{ c.text }}
-                            </blockquote>
-                        </p>
-                    {% endfor %}
-                {% endif %}
-            {% endblock %}
-
+        <!-- Modal -->
+        <div class="modal fade dark" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Kontakt</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" id="send" type="button" class="btn btn-link menu">OK</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!--STOPKA-->
-    <div class="foot text-center">Mieszczak Mateusz © 2014</div>
-
-    <!-- Modal -->
-    <div class="modal fade dark" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Kontakt</h4>
-          </div>
-          <div class="modal-body">
-
-          </div>
-          <div class="modal-footer">
-
-            <a href="" id="send" type="button" class="btn btn-link menu">OK</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-</body>
+        <!--STOPKA <div class="foot text-center">Mieszczak Mateusz © 2014</div>
+-->
+    </body>
 </html>

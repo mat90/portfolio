@@ -17,6 +17,10 @@ span{
   margin-top: 6px;
 }
 
+.logo{
+  padding-bottom: 30px;
+}
+
 body{
   font-family: 'Ropa Sans', sans-serif;
   color: #ddd;
@@ -26,6 +30,7 @@ body{
 }
 
 .container {
+  padding-top: 25px;
   padding-right: 15px;
   padding-left: 15px;
 }

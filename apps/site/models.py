@@ -32,7 +32,7 @@ class Images(models.Model):
         related_name='image',
     )
     image = models.ImageField(
-        upload_to='/media/upload/',
+        upload_to='upload/',
         verbose_name=msgs['IMAGE'],
     )
     def __unicode__(self):

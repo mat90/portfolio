@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    {% if works %}
+        {% for w in works %}
+            <h3 class="blog-post-title">{{ w.title }}</h3>
+            <p class="blog-post-meta">{{ w.meta }}</p>
+            <p>
+                {% if w.images %}
+                <div class="row">
+                    <div class="col-sm-8">
+                        <blockquote class="blog-post">
+                            {{ w.text }}
+                        </blockquote>
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="{{ MEDIA_URL }}{{ w.images.0 }}" class="img-rounded img-responsive">
+                    </div>
+                </div>
+                {% else %}
+                    <blockquote class="blog-post">
+                        {{ w.text }}
+                    </blockquote>
+                {% endif %}
+            </p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

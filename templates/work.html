@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    {% if content %}
+        {% for c in content %}
+            <h3 class="blog-post-title">{{ c.title }}</h3>
+            <p class="blog-post-meta">{{ c.meta }}</p>
+            <p>
+                <blockquote class="blog-post">
+                    {{ c.text }}
+                </blockquote>
+            </p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
