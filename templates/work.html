@@ -2,16 +2,73 @@
 {% load i18n %}
 
 {% block content %}
-    {% if content %}
-        {% for c in content %}
-            <h3 class="blog-post-title">{{ c.title }}</h3>
-            <p class="blog-post-meta">{{ c.meta }}</p>
-            <p>
-                <blockquote class="blog-post">
-                    {{ c.text }}
-                </blockquote>
-            </p>
-        {% endfor %}
+    {% if work %}
+        <script type="text/javascript">
+            $(document).ready(function(ev){
+            $('#custom_carousel .controls a').on('click',function(){
+                $('#custom_carousel .controls li.active').removeClass('active');
+                $(this).parent('li').addClass('active');
+            });
+        });
+        </script>
+
+
+        <h3 class="blog-post-title">{{ work.title }}</h3>
+        <p class="blog-post-meta">{{ work.meta }}</p>
+
+
+        <div class="container-fluid">
+            <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                    <div class="item active">
+                        <div class="container-fluid">
+                        <blockquote class="blog-post">
+                            <div class="row">
+                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                <div class="col-md-9">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                                </div>
+                            </div>
+                        </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="container-fluid">
+                           <blockquote class="blog-post">
+                            <div class="row">
+                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                <div class="col-md-9">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                                </div>
+                            </div>
+                        </blockquote>
+                        </div>
+                    </div>
+                <!-- End Item -->
+                </div>
+                <!-- End Carousel Inner -->
+                <div class="controls">
+                    <ul class="nav navbar-nav">
+
+                        <li data-target="#custom_carousel" data-slide-to="0" class="active">
+                            <a href="#"><img src="http://placehold.it/50x50"></a>
+                        </li>
+
+                        <li data-target="#custom_carousel" data-slide-to="1">
+                            <a href="#"><img src="http://placehold.it/50x50"></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- End Carousel -->
+        </div>
+
+
+
     {% endif %}
 {% endblock %}
 

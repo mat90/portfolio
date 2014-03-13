@@ -4,14 +4,16 @@
 {% block content %}
     {% if works %}
         {% for w in works %}
-            <h3 class="blog-post-title">{{ w.title }}</h3>
+            <h3 class="blog-post-title">
+                <a class="works" href="{% url 'work' w.id %}">{{ w.title }}</a>
+            </h3>
             <p class="blog-post-meta">{{ w.meta }}</p>
             <p>
                 {% if w.images %}
                 <div class="row">
                     <div class="col-sm-8">
                         <blockquote class="blog-post">
-                            {{ w.text }}
+                            {{ w.text|truncatechars:400 }}
                         </blockquote>
                     </div>
                     <div class="col-sm-4">
@@ -20,7 +22,7 @@
                 </div>
                 {% else %}
                     <blockquote class="blog-post">
-                        {{ w.text }}
+                        {{ w.text|truncatechars:400 }}
                     </blockquote>
                 {% endif %}
             </p>

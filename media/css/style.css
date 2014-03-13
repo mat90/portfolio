@@ -4,14 +4,23 @@
 }
 
 a:visited, a:link {
-    color:#D3D3D3;
+    color: #D3D3D3;
 }
 a:hover {
-    color:#00A5FF;
+    color: #00A5FF;
 }
 a:active {
-    color:#00B5FF;
+    color: #00B5FF;
 }
+
+.works:visited, .works:link, .works:active {
+    color: #00A5FF;
+}
+.works:hover {
+    color: #00D5FF;
+    text-decoration: none;
+}
+
 
 span{
   margin-top: 6px;
@@ -103,4 +112,9 @@ h4,h3,h2,h1 {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+
+
+.container-fluid{
+  padding-left: 0px;
 }

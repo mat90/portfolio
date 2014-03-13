@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from apps.site.models import Content, Images
+from django.shortcuts import get_object_or_404
 
 
 class Home(View):
@@ -34,13 +35,15 @@ class Works(View):
         })
 
 class Work(View):
-    def get(self, id, request):
-        id = int(id)
+
+    def get(self, request, id):
+        work = get_object_or_404(Content, id=int(id))
+        work.images = Images.objects.filter(content=work)
         return render(
             request,
-            "work.html",
-            {}
-        )
+            "work.html",{
+            'work': work,
+        })
 
 
 class Contact(View):
