@@ -4,6 +4,7 @@
     <!-- http://team.fourdesire.com/playgrounds/texteffects -->
     <!-- http://www.pracuj.pl/praca/programista-python-lublin,oferta,3314536 -->
     <!-- https://github.com/claystreet/bootstrap-tipover -->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,8 +51,19 @@
               $('#ico_about').attr("class","glyphicon glyphicon-plus");
             });
           });
-        });
 
+          $('#contact').mouseover(function(){
+            $('#ico_contact').removeClass("glyphicon-plus");
+            $('#ico_contact').addClass("glyphicon-remove blue")
+            $('#contact').text("Kontakt");
+            $('#contact').textEffect({});
+            $('#contact').mouseout(function(){
+              $('#ico_contact').attr("class","glyphicon glyphicon-plus");
+            });
+          });
+
+          $('#contact_popover').popover();
+        });
     </script>
 
     <!--[if lt IE 9]>
@@ -105,14 +117,12 @@
 
                 <div class="col-sm-12">
                     <div class="col-sm-2">
-                        <span id="ico_about" class="glyphicon glyphicon-plus"></span>
+                        <span id="ico_contact" class="glyphicon glyphicon-plus"></span>
                     </div>
                     <div class="col-sm-10">
-
-                        <a href="#" class="contact menu">
-                            Kontakt
+                        <a href="javascript:void(0);" id="contact_popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                            <div id="contact" class="menu">Kontakt</div>
                         </a>
-
                     </div>
                 </div>
 
