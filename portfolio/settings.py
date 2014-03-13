@@ -27,7 +27,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
-    'apps.home',
+    'apps.site',
+
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,3 +76,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = '/home/mat90/portfolio/media/'
+MEDIA_URL = '/media/'
