@@ -62,7 +62,6 @@
             });
           });
 
-          $('#contact_popover').popover();
         });
     </script>
 
@@ -120,9 +119,10 @@
                         <span id="ico_contact" class="glyphicon glyphicon-plus"></span>
                     </div>
                     <div class="col-sm-10">
-                        <a href="javascript:void(0);" id="contact_popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                            <div id="contact" class="menu">Kontakt</div>
-                        </a>
+                            <!-- Button trigger modal -->
+                            <a href="javascript:void(0);">
+                                <div id="contact" data-toggle="modal" data-target="#myModal" class="menu">Kontakt</div>
+                            </a>
                     </div>
                 </div>
 
@@ -151,6 +151,26 @@
 
     <!--STOPKA-->
     <div class="foot text-center">Mieszczak Mateusz © 2014</div>
+
+    <!-- Modal -->
+    <div class="modal fade dark" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Kontakt</h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+
+            <a href="" id="send" type="button" class="btn btn-link menu">OK</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>

@@ -4,13 +4,13 @@
 }
 
 a:visited, a:link {
-    color:#ddd;
+    color:#D3D3D3;
 }
 a:hover {
-    color:#529AE3;
+    color:#00A5FF;
 }
 a:active {
-    color:#72A5FF;
+    color:#00B5FF;
 }
 
 span{
@@ -20,7 +20,7 @@ span{
 body{
   font-family: 'Ropa Sans', sans-serif;
   color: #ddd;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 1.42857;
   background-color: #000;
 }
@@ -32,25 +32,26 @@ body{
 
 h4,h3,h2,h1 {
   margin-top: 25px;
-  color: #529AE3;
+  color: #00A2FF;
 }
 
 .col-sm-8, .col-sm-12 {
   /*padding-top: 15px;
-  padding-bottom: 15px;*/
+  padding-bottom: 15px;
   background-color: #fff;
   background-color: rgba(150,150,150,.15);
   border: 1px solid #fff;
-  border: 1px solid rgba(150,150,150,.2);
+  border: 1px solid rgba(150,150,150,.2);*/
 }
 
 .blog-post {
   margin-bottom: 60px;
+  font-size: 15.5px;
   border-left: 2px solid rgb(0, 136, 204);
 }
 .blog-post-title {
   margin-bottom: 5px;
-  font-size: 40px;
+  font-size: 37px;
 }
 .blog-post-meta {
   color: #aaa;
@@ -72,6 +73,29 @@ h4,h3,h2,h1 {
   height: 25px;
 }
 
+
 .blue {
     color: rgb(0, 136, 204);
+}
+
+
+.modal-open .modal, .btn:focus {
+    outline: none !important;
+}
+.modal.dark .modal-body, .modal.dark .modal-content{
+  background: #40464b;
+}
+.modal.dark .modal-header {
+  background: #2d3032;
+  border-bottom: 1px solid #2a2c2e;
+}
+.modal.dark .modal-header h1, .modal.dark .modal-header h2, .modal.dark .modal-header h3, .modal.dark .modal-header h4 {
+  color: #ccc;
+}
+.modal.dark .modal-footer {
+  background: #2d3032;
+  border-top: 1px solid #2a2c2e;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
