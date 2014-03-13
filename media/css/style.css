@@ -3,6 +3,16 @@
   src: url('../fonts/SWISSMADE.TTF');
 }
 
+a:visited, a:link {
+    color:#ddd;
+}
+a:hover {
+    color:#529AE3;
+}
+a:active {
+    color:#72A5FF;
+}
+
 span{
   margin-top: 6px;
 }
