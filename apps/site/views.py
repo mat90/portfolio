@@ -3,8 +3,9 @@ from django.views.generic.base import View
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from apps.site.models import Content, Images
+from apps.site.models import Content, Positions, Profile
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
 
 
 class Home(View):
@@ -14,7 +15,7 @@ class Home(View):
         content = Content.objects.filter(is_main=True)
         if len(content) > 0:
             for i in range(len(content)):
-                content[i].images = Images.objects.filter(content=content[i])
+                content[i].positions = Positions.objects.filter(content=content[i])
         return render(
             request,
             self.template_name, {
@@ -27,7 +28,7 @@ class Works(View):
     def get(self, request):
         works = Content.objects.filter(is_main=False)
         for w in works:
-            w.images = Images.objects.filter(content=w)
+            w.positions = Positions.objects.filter(content=w)
 
         return render(
             request,
@@ -40,7 +41,7 @@ class Work(View):
 
     def get(self, request, id):
         work = get_object_or_404(Content, id=int(id))
-        work.images = Images.objects.filter(content=work)
+        work.positions = Positions.objects.filter(content=work)
         return render(
             request,
             self.template_name,{
@@ -50,6 +51,7 @@ class Work(View):
 
 class Contact(View):
     def post(self, request):
+
         return HttpResponseRedirect(reverse('home'))
 
 
@@ -57,7 +59,11 @@ class About(View):
     template_name = "about.html"
 
     def get(self, request):
+        user = User.objects.filter(is_superuser=True)[0]
+        profile = Profile.objects.get(user=user)
         return render(
             request,
             self.template_name, {
+            'user': user,
+            'profile': profile,
         })

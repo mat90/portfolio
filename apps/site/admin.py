@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
 from django.contrib import admin
-from apps.site.models import Content, Images
-from apps.site.forms import ContentForm, ImagesForm
+from apps.site.models import Content, Positions, Profile
+from apps.site.forms import ContentForm, PositionsForm, ProfileForm
 
 
-class ImagesInline(admin.StackedInline):
-    model=Images
-    form=ImagesForm
+class PositionsInline(admin.StackedInline):
+    model=Positions
+    form=PositionsForm
     extra=2
 
 
@@ -22,6 +22,12 @@ class ContentAdmin(admin.ModelAdmin):
     list_filter = [
         'is_main',
     ]
-    inlines=[ImagesInline]
+    inlines=[PositionsInline]
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    form=ProfileForm
+
 
 admin.site.register(Content, ContentAdmin)
+admin.site.register(Profile, ProfileAdmin)

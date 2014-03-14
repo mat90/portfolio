@@ -9,20 +9,28 @@
             </h3>
             <p class="blog-post-meta">{{ w.meta }}</p>
             <p>
-                {% if w.images %}
+                {% if w.positions.0.image %}
                 <div class="row">
                     <div class="col-sm-8">
                         <blockquote class="blog-post">
-                            {{ w.text|truncatechars:400 }}
+                            <a class="text" href="{% url 'work' w.id %}">
+                                {% autoescape off %}
+                                    {{ w.positions.0.text|truncatechars:400 }}
+                                {% endautoescape %}
+                            </a>
                         </blockquote>
                     </div>
                     <div class="col-sm-4">
-                        <img src="{{ MEDIA_URL }}{{ w.images.0 }}" class="img-rounded img-responsive">
+                        <img src="{{ MEDIA_URL }}{{ w.positions.0.image }}" class="img-rounded img-responsive">
                     </div>
                 </div>
                 {% else %}
                     <blockquote class="blog-post">
-                        {{ w.text|truncatechars:400 }}
+                        <a class="text" href="{% url 'work' w.id %}">
+                            {% autoescape off %}
+                                {{ w.positions.0.text|truncatechars:400 }}
+                            {% endautoescape %}
+                        </a>
                     </blockquote>
                 {% endif %}
             </p>

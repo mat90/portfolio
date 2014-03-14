@@ -11,4 +11,14 @@ messages = {
     'CONTENTS'		: _(u'Treści'),
     'IMAGE'			: _(u'Obraz'),
     'IMAGES'		: _(u'Obrazy'),
+
+    'CITY'          : _(u'Miasto'),
+    'PHONE'         : _(u'Telefon'),
+    'EMAIL_EMBED'   : _(u'E-mail [kod osadzenia]'),
+    'PHOTO'         : _(u'Zdjęcie'),
+    'USER'          : _(u'Użytkownik'),
+    'DESCRIPTION'   : _(u'Opis'),
+
+    'PROFILE'       : _(u'Profil'),
+    'PROFILES'      : _(u'Profile'),
 }

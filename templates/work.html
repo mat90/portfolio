@@ -12,59 +12,43 @@
         });
         </script>
 
-
         <h3 class="blog-post-title">{{ work.title }}</h3>
         <p class="blog-post-meta">{{ work.meta }}</p>
 
-
         <div class="container-fluid">
             <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-
-                    <div class="item active">
+                <!-- Item -->
+                {% for p in work.positions %}
+                    <div class="item {% if forloop.first %}active{% endif %}">
                         <div class="container-fluid">
                         <blockquote class="blog-post">
                             <div class="row">
-                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                <div class="col-md-3"><img src="{{ MEDIA_URL }}{{ p.image }}" class="img-responsive"></div>
                                 <div class="col-md-9">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                                    {% autoescape off %}
+                                        {{ p.text }}
+                                    {% endautoescape %}
                                 </div>
                             </div>
                         </blockquote>
                         </div>
                     </div>
-
-                    <div class="item">
-                        <div class="container-fluid">
-                           <blockquote class="blog-post">
-                            <div class="row">
-                                <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
-                                <div class="col-md-9">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
-                                </div>
-                            </div>
-                        </blockquote>
-                        </div>
-                    </div>
+                {% endfor %}
                 <!-- End Item -->
                 </div>
-                <!-- End Carousel Inner -->
+                <!-- Menu -->
                 <div class="controls">
                     <ul class="nav navbar-nav">
-
-                        <li data-target="#custom_carousel" data-slide-to="0" class="active">
-                            <a href="#"><img src="http://placehold.it/50x50"></a>
-                        </li>
-
-                        <li data-target="#custom_carousel" data-slide-to="1">
-                            <a href="#"><img src="http://placehold.it/50x50"></a>
-                        </li>
-
+                    {% for p in work.positions %}
+                    <li data-target="#custom_carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}>
+                        <a href="#"><img src="{{ MEDIA_URL }}{{ p.image }}" class="img-responsive carousel_small_img"></a>
+                    </li>
+                    {% endfor %}
                     </ul>
                 </div>
+                <!-- End Menu -->
             </div>
-            <!-- End Carousel -->
         </div>
 
 

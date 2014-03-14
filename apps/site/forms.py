@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 from django import forms
-from apps.site.models import Content, Images
+from apps.site.models import Content, Positions, Profile
 
 
 class ContentForm(forms.ModelForm):
@@ -8,7 +8,11 @@ class ContentForm(forms.ModelForm):
         model=Content
 
 
-class ImagesForm(forms.ModelForm):
+class PositionsForm(forms.ModelForm):
     class Meta:
-        model=Images
+        model=Positions
 
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model=Profile
