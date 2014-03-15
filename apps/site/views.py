@@ -30,7 +30,7 @@ class Home(View):
 class Works(View):
     template_name = "works.html"
     def get(self, request, status=None):
-        works = Content.objects.filter(is_main=False)
+        works = Content.objects.filter(is_main=False).order_by('position')
         for w in works:
             w.positions = Positions.objects.filter(content=w)
 

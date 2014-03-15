@@ -45,6 +45,11 @@ class Content(models.Model):
         default=False,
         verbose_name=msgs['IS_MAIN'],
     )
+    position = models.IntegerField(
+        default = 0,
+        blank=True,
+        verbose_name=msgs['POSITION'],
+    )
     title = models.CharField(
         max_length=250,
         verbose_name=msgs['TITLE'],

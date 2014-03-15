@@ -17,6 +17,7 @@ class ContentAdmin(admin.ModelAdmin):
     ]
     list_display=[
         'title',
+        'position',
         'is_main',
     ]
     list_filter = [

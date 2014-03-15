@@ -119,6 +119,9 @@ h4,h3,h2,h1 {
   box-shadow: none;
 }
 
+div [id^='big_image_'] {
+  padding-top: 50px;
+}
 
 .container-fluid{
   padding-left: 0px;
@@ -128,8 +131,12 @@ h4,h3,h2,h1 {
   height: 50px;
 }
 
+.carousel_big_img{
+  max-height: 300px;
+}
+
 .message_alerts{
-  opacity:0.80;
+  opacity: 0.80;
   font-size: 15px;
   font-weight: bold;
 }

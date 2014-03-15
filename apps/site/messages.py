@@ -26,4 +26,5 @@ messages = {
     'EMAIL'         : _(u'E-mail'),
     'MESSAGE'       : _(u'Wiadomość'),
     'MESSAGES'      : _(u'Wiadomośći'),
+    'POSITION'      : _(u'Pozycja na stronie'),
 }

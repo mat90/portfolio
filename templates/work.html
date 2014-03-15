@@ -24,8 +24,12 @@
                         <div class="container-fluid">
                         <blockquote class="blog-post">
                             <div class="row">
-                                <div class="col-md-3"><img src="{{ MEDIA_URL }}{{ p.image }}" class="img-responsive"></div>
-                                <div class="col-md-9">
+                                <div class="col-md-4">
+                                    <a href="javascript:void(0);">
+    <img src="{{ MEDIA_URL }}{{ p.image }}"  data-toggle="modal" data-target="#big_image_{{ forloop.counter0 }}" class="img-rounded carousel_big_img img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
                                     {% autoescape off %}
                                         {{ p.text }}
                                     {% endautoescape %}
@@ -41,9 +45,9 @@
                 <div class="controls">
                     <ul class="nav navbar-nav">
                     {% for p in work.positions %}
-                    <li data-target="#custom_carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}>
-                        <a href="#"><img src="{{ MEDIA_URL }}{{ p.image }}" class="img-responsive carousel_small_img"></a>
-                    </li>
+                        <li data-target="#custom_carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}>
+                            <a href="#"><img src="{{ MEDIA_URL }}{{ p.image }}" class="img-responsive carousel_small_img"></a>
+                        </li>
                     {% endfor %}
                     </ul>
                 </div>
@@ -51,8 +55,12 @@
             </div>
         </div>
 
-
-
+        <!-- Popover -->
+        {% for p in work.positions %}
+            <div class="text-center modal fade dark" id="big_image_{{ forloop.counter0 }}">
+                <img src="{{ MEDIA_URL }}{{ p.image }}" data-dismiss="modal" class="img-rounded">
+            </div>
+        {% endfor %}
     {% endif %}
 {% endblock %}
 
