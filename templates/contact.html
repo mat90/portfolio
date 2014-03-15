@@ -1,0 +1,21 @@
+{% load i18n %}
+{% block contact %}
+    <div class="modal fade dark" id="contact_form">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" >Kontakt</h4>
+                </div>
+                <form id="message" action="{% url 'message' %}" method="POST">{% csrf_token %}
+                    <div class="modal-body">
+                        {{ contact_form.as_p }}
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-link menu" type="submit" value="OK" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

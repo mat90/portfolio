@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from django.contrib import admin
-from apps.site.models import Content, Positions, Profile
-from apps.site.forms import ContentForm, PositionsForm, ProfileForm
+from apps.site.models import Content, Positions, Profile, Messages
+from apps.site.forms import ContentForm, PositionsForm, ProfileForm, MessagesForm
 
 
 class PositionsInline(admin.StackedInline):
@@ -29,5 +29,9 @@ class ProfileAdmin(admin.ModelAdmin):
     form=ProfileForm
 
 
+class MessagesAdmin(admin.ModelAdmin):
+    form=MessagesForm
+
+admin.site.register(Messages, MessagesAdmin)
 admin.site.register(Content, ContentAdmin)
 admin.site.register(Profile, ProfileAdmin)

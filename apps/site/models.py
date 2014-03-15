@@ -81,3 +81,24 @@ class Positions(models.Model):
     class Meta:
         verbose_name=msgs['IMAGE']
         verbose_name_plural=msgs['IMAGES']
+
+
+class Messages(models.Model):
+    date = models.DateTimeField(
+        verbose_name=msgs['DATE'],
+        auto_now_add=True,
+    )
+    email = models.EmailField(
+        verbose_name=msgs['EMAIL'],
+        max_length=250,
+    )
+    title = models.CharField(
+        verbose_name=msgs['TITLE'],
+        max_length=250,
+    )
+    content = models.TextField(
+        verbose_name=msgs['CONTENT'],
+    )
+    class Meta:
+        verbose_name=msgs['MESSAGE']
+        verbose_name_plural=msgs['MESSAGES']

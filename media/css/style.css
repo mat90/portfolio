@@ -53,14 +53,14 @@ h4,h3,h2,h1 {
   color: #00A2FF;
 }
 
-.col-sm-8, .col-sm-12 {
-  /*padding-top: 15px;
+.col-sm-8, .col-sm-12 {/*
+  padding-top: 15px;
   padding-bottom: 15px;
   background-color: #fff;
   background-color: rgba(150,150,150,.15);
   border: 1px solid #fff;
-  border: 1px solid rgba(150,150,150,.2);*/
-}
+  border: 1px solid rgba(150,150,150,.2);
+*/}
 
 .blog-post {
   margin-bottom: 60px;
@@ -126,4 +126,10 @@ h4,h3,h2,h1 {
 .carousel_small_img{
   width: 50px;
   height: 50px;
+}
+
+.message_alerts{
+  opacity:0.80;
+  font-size: 15px;
+  font-weight: bold;
 }

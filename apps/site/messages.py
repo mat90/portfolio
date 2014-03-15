@@ -21,4 +21,9 @@ messages = {
 
     'PROFILE'       : _(u'Profil'),
     'PROFILES'      : _(u'Profile'),
+
+    'DATE'          : _(u'Data'),
+    'EMAIL'         : _(u'E-mail'),
+    'MESSAGE'       : _(u'Wiadomość'),
+    'MESSAGES'      : _(u'Wiadomośći'),
 }
