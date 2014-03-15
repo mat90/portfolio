@@ -137,6 +137,17 @@ div [id^='big_image_'] {
 
 .message_alerts{
   opacity: 0.80;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
+}
+
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
 }

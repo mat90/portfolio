@@ -61,7 +61,9 @@ class SaveMessage(View):
     def post(self, request):
         message = MessagesForm(request.POST)
         url = request.META.get('HTTP_REFERER').split('/')
-        url.remove([i for i in ['X','V'] if i in url][0])
+        search_result = [i for i in ['X','V'] if i in url]
+        if len(search_result)>0:
+            url.remove(search_result[0])
         if message.is_valid():
             message.save()
             return HttpResponseRedirect('/'.join(url)+'V')

@@ -72,25 +72,6 @@
     </head>
     <body>
         <div class="container">
-            <!-- ALERTS -->
-                {% if status == 'V' %}
-                    <div class="col-sm-12">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4 alert alert-success text-center message_alerts">
-                        Twoja wiadomość została wysłana.
-                        </div>
-                        <div class="col-sm-4"></div>
-                    </div>
-                {% elif status == 'X' %}
-                    <div class="col-sm-12">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4 alert alert-danger text-center message_alerts">
-                        Wystąpił błąd podczas wysyłania Twojej wiadomośći.
-                        </div>
-                        <div class="col-sm-4"></div>
-                    </div>
-                {% endif%}
-
             <!--MENU-->
             <div class="col-sm-3 ">
                 <div class="row">
@@ -150,6 +131,19 @@
 
             <!--TREŚĆ-->
             <div class="col-sm-8 col-sm-offset-1">
+
+            <!-- ALERTS -->
+                {% if status == 'V' %}
+                        <div class="col-sm-12 alert alert-success text-center message_alerts">
+                            <a class="close" data-dismiss="alert">×</a>
+                            Twoja wiadomość została wysłana.
+                        </div>
+                {% elif status == 'X' %}
+                        <div class="col-sm-12 alert alert-danger text-center message_alerts">
+                            <a class="close" data-dismiss="alert">×</a>
+                            Wystąpił błąd podczas wysyłania Twojej wiadomośći.
+                        </div>
+                {% endif%}
 
                 {% block content %}
                     {% if content %}
