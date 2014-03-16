@@ -151,3 +151,11 @@ div [id^='big_image_'] {
   border-color: #d6e9c6;
   color: #468847;
 }
+
+
+.error {
+  font-family: 'Share Tech Mono', sans-serif;
+  font-size: 35px;
+  color: rgba(255, 255, 255, 0.0);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 1);
+}
