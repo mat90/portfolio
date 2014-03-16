@@ -32,6 +32,14 @@ class ProfileAdmin(admin.ModelAdmin):
 
 class MessagesAdmin(admin.ModelAdmin):
     form=MessagesForm
+    list_display=[
+        'title',
+        'email',
+        'date',
+    ]
+    list_filter = [
+        'date',
+    ]
 
 admin.site.register(Messages, MessagesAdmin)
 admin.site.register(Content, ContentAdmin)
